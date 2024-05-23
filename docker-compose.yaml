@@ -1,0 +1,19 @@
+version: '3.5'
+
+networks:
+  web:
+    external: true
+
+services:
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    container_name: web-driver-chrome
+    hostname: chrome
+    networks:
+      - web
+    ports:
+      - "5900:5900"
+      - "4444:4444"
+    privileged: true
+    shm_size: 2g

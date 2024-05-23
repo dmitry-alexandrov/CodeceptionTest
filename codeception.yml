@@ -1,12 +1,18 @@
 namespace: Tests
 support_namespace: Support
 paths:
-    tests: src/tests
-    output: src/tests/_output
-    data: src/tests/Support/Data
-    support: src/tests/Support
-    envs: src/tests/_envs
+  tests: src/tests
+  output: src/tests/_output
+  data: src/tests/Support/Data
+  support: src/tests/Support
+  envs: src/tests/_envs
 actor_suffix: Tester
 extensions:
-    enabled:
-        - Codeception\Extension\RunFailed
+  enabled:
+    - Codeception\Extension\RunFailed
+
+settings:
+  colors: true
+
+params:
+  - .env

@@ -5,11 +5,12 @@
 
 actor: AcceptanceTester
 modules:
-    enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
+  enabled:
+    - WebDriver:
+        url: %TEST_DOMAIN%
+        browser: chrome
 # Add Codeception\Step\Retry trait to AcceptanceTester to enable retries
 step_decorators:
-    - Codeception\Step\ConditionalAssertion
-    - Codeception\Step\TryTo
-    - Codeception\Step\Retry
+  - Codeception\Step\ConditionalAssertion
+  - Codeception\Step\TryTo
+  - Codeception\Step\Retry

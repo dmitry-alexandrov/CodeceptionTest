@@ -18,6 +18,8 @@
     "require": {
         "codeception/codeception": "5.2.x-dev",
         "codeception/module-asserts": "dev-master",
-        "codeception/module-phpbrowser": "dev-master"
+        "codeception/module-phpbrowser": "dev-master",
+        "codeception/module-webdriver": "dev-master",
+        "symfony/dotenv": "7.2.x-dev"
     }
 }
