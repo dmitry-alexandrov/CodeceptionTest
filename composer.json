@@ -1,0 +1,23 @@
+{
+    "name": "crazy/pos-selenium-test",
+    "description": "pos testing",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SeleniumTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gambit",
+            "email": "efin2012@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "codeception/codeception": "5.2.x-dev",
+        "codeception/module-asserts": "dev-master",
+        "codeception/module-phpbrowser": "dev-master"
+    }
+}
