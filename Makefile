@@ -18,7 +18,7 @@ start:
 stop:
 	docker-compose down
 ls:
-	docker-compose ls
+	docker-compose ps
 connect:
 	docker exec -it selenium-app bash
 
