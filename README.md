@@ -31,3 +31,34 @@ https://pos5.lko-dev.fid-team.ru/og/login
 ## Директория с логами tests/_output
 
 ![img.png](img.png)
+
+## Все тесты пишем в директории /src/tests/Acceptance
+внутри этой директории группируем по папкам тесты 
+- Например тесты на авторизацию - группируем в /src/tests/Acceptance/Auth
+
+## У нас есть разделение по ролям, поэтому тесты по ролям должны группироваться тоже, делаем так
+  - /src/tests/Acceptance/Auth/Admin  
+  - /src/tests/Acceptance/Auth/Federal
+  - /src/tests/Acceptance/Auth/Regional
+  - /src/tests/Acceptance/Auth/Municipal
+
+Тестам навешиваем группу - https://codeception.com/docs/AdvancedUsage
+
+![img_1.png](img_1.png)
+
+потом будем запускать разные группы тестов 
+```bash
+# группа тестов для администратора
+php vendor/bin/codecept run -g admin
+# группа тестов для федерального уполномоченного
+php vendor/bin/codecept run -g federal
+# группа тестов для регионального уполномоченного
+php vendor/bin/codecept run -g regional
+# группа тестов для муниципала
+php vendor/bin/codecept run -g muinicipal
+
+# для всех ролей 
+php vendor/bin/codecept run -g admin -g federal -g regional -g muinicipal
+
+```
+
