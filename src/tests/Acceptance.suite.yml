@@ -7,6 +7,7 @@ actor: AcceptanceTester
 modules:
   enabled:
     - WebDriver:
+        host: %SELENIUM_DRIVER_URL%
         url: %TEST_DOMAIN%
         browser: chrome
 # Add Codeception\Step\Retry trait to AcceptanceTester to enable retries

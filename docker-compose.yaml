@@ -5,6 +5,17 @@ networks:
     external: true
 
 services:
+  selenium-app:
+    image: devilbox/php-fpm-8.2
+    container_name: selenium-app
+    hostname: selenium
+    volumes:
+      - ./:/var/www/src
+    working_dir: /var/www/src
+    networks:
+      - web
+    privileged: true
+    shm_size: 4g
 
   chrome:
     image: selenium/standalone-chrome:latest

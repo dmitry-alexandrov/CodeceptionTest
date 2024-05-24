@@ -6,9 +6,9 @@
 
 ## Getting started
 
-1. git clone git@gitlab.maxitlab.com:og-dev/selenuim.git
-2. docker-compose up -d - запустится контейнер с браузером google chrome - веб драйвер для тестов
-3. vendor/bin/codecept run 
+1. `git clone git@gitlab.maxitlab.com:og-dev/selenuim.git`
+2. `make start`  |  или напрямую `docker-compose up -d`
+3. `make runTest` | или напрямую `vendor/bin/codecept run`  - запуск всех тестов
 
 # Configuration with .env file
 
@@ -62,3 +62,14 @@ php vendor/bin/codecept run -g admin -g federal -g regional -g muinicipal
 
 ```
 
+# Доступные команды 
+- make runTest - запустить тесты
+- make start - запустить все контейнеры
+- make stop - остановить все контейнеры 
+- make ls - выводит список запущенных контейнеров, из числа тех что указаны в docker-compose.yaml
+- make stats - откроет статистику докера по потреблению памяти, процессорного времени и тп
+- make logs - просто выведет последние логи
+- make logsf - откроет логи на просмотр и будет держать открытыми пока не сбросишь сам через ctrl+c
+- make connect - провалиться в сам контейрен (подключение к контейнеру с тестами)
+
+Внутри контейнера можно запускать тесты через `./vendor/bin/codecept`
