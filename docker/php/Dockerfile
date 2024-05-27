@@ -40,8 +40,7 @@ RUN apt install ${APT_INSTALL_OPTIONS} \
 	php${PHP_VERSION}-mbstring \
 	php${PHP_VERSION}-intl \
 	php${PHP_VERSION}-xml \
-	php${PHP_VERSION}-zip \
-	-y
+	php${PHP_VERSION}-zip
 RUN apt install ${APT_INSTALL_OPTIONS} \
     php${PHP_VERSION}-fpm
 
