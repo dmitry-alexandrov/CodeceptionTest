@@ -6,11 +6,17 @@ networks:
 
 services:
   selenium-app:
-    image: devilbox/php-fpm-8.2
     container_name: selenium-app
     hostname: selenium
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      args:
+        PHP_LATEST_VERSION: ${PHP_LATEST_VERSION}
+        GITHUB_ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
     volumes:
       - ./:/var/www/src
+      - ./docker/php/root:/root
     working_dir: /var/www/src
     networks:
       - web
