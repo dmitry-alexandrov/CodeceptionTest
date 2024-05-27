@@ -13,14 +13,14 @@
 # Configuration with .env file
 
 ## Переменные окружения:
-TEST_DOMAIN - full domain name for tests, example: https://pos5.lko-dev.fid-team.ru/og
+* `TEST_DOMAIN` - домен для подключения (например: https://pos5.lko-dev.fid-team.ru/og)
+* `GITHUB_ACCESS_TOKEN` - токет GitHub для установки Composer (создается по [ссылке](https://github.com/settings/tokens/new?scopes=&description=composer_2024))
 
 В тестах используем относительные пути к странице, например так 
 
 - /login
 
-В итоге этот относительный путь будет смаплен с TEST_DOMAIN из .env файла
-получим нужную страницу:
+В итоге этот относительный путь будет смаплен с `TEST_DOMAIN` из .env файла, получив нужную страницу:
 
 https://pos5.lko-dev.fid-team.ru/og/login
 
@@ -34,7 +34,7 @@ https://pos5.lko-dev.fid-team.ru/og/login
 
 ## Все тесты пишем в директории /src/tests/Acceptance
 внутри этой директории группируем по папкам тесты 
-- Например тесты на авторизацию - группируем в /src/tests/Acceptance/Auth
+- Например, тесты на авторизацию - группируем в /src/tests/Acceptance/Auth
 
 ## У нас есть разделение по ролям, поэтому тесты по ролям должны группироваться тоже, делаем так
   - /src/tests/Acceptance/Auth/Admin  
@@ -73,3 +73,5 @@ php vendor/bin/codecept run -g admin -g federal -g regional -g muinicipal
 - make connect - провалиться в сам контейрен (подключение к контейнеру с тестами)
 
 Внутри контейнера можно запускать тесты через `./vendor/bin/codecept`
+
+Больше информации о приемочных тестах - [тут](https://codeception.com/docs/GettingStarted)
