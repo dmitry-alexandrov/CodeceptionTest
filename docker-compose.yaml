@@ -11,6 +11,9 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
+      args:
+        PHP_LATEST_VERSION: ${PHP_LATEST_VERSION}
+        GITHUB_ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
     volumes:
       - ./:/var/www/src
       - ./docker/php/root:/root
