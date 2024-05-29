@@ -27,8 +27,6 @@ RUN apt update && apt install ${APT_INSTALL_OPTIONS} \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN cat
-
 RUN dpkg -l | grep php | tee packages.txt
 RUN add-apt-repository ppa:ondrej/php -y
 RUN apt update
