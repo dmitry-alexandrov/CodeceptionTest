@@ -75,3 +75,11 @@ php vendor/bin/codecept run -g admin -g federal -g regional -g muinicipal
 Внутри контейнера можно запускать тесты через `./vendor/bin/codecept`
 
 Больше информации о приемочных тестах - [тут](https://codeception.com/docs/GettingStarted)
+
+
+Создание тестов:
+
+`vendor/bin/codecept generate:cest Acceptance <testname>`
+<testname> - название теста, например, CreatePoll, вследствии чего создастся класс CreatePollCest
+
+

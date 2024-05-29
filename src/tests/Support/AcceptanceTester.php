@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
+use SeleniumTest\tests\Support\helpers\UserHelper;
+
 /**
  * Inherited Methods
  * @method void wantTo($text)
@@ -18,7 +20,7 @@ namespace Tests\Support;
  * @method void pause($vars = [])
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
@@ -26,4 +28,24 @@ class AcceptanceTester extends \Codeception\Actor
     /**
      * Define custom actions here
      */
+
+    public function signInAsAdmin()
+    {
+        UserHelper::signIn($this, UserHelper::USER_ADMIN);
+    }
+
+    public function signInAsFederal()
+    {
+        UserHelper::signIn($this, UserHelper::USER_FEDERAL);
+    }
+
+    public function signInAsRegional()
+    {
+        UserHelper::signIn($this, UserHelper::USER_REGIONAL);
+    }
+
+    public function signInAsMunicipal()
+    {
+        UserHelper::signIn($this, UserHelper::USER_MUNICIPAL);
+    }
 }
