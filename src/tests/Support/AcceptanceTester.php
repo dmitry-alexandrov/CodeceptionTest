@@ -48,4 +48,21 @@ class AcceptanceTester extends \Codeception\Actor
     {
         UserHelper::signIn($this, UserHelper::USER_MUNICIPAL);
     }
+
+    /**
+     * @param $field
+     * @param $value
+     */
+    public function fillTextArea($field, $value)
+    {
+        $this->executeJs(sprintf("document.querySelector('%s').innerHTML = '%s'", $field, $value));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentUrl()
+    {
+        return $this->executeJS("return location.href");
+    }
 }
