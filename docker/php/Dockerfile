@@ -52,4 +52,4 @@ RUN chmod +x /docker-entrypoint.sh && mkdir -p /var/www && mkdir -p /run/php
 
 WORKDIR /var/www/src
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
