@@ -47,7 +47,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& php -r "unlink('composer-setup.php');"
 RUN composer config --global --auth github-oauth.github.com ${GITHUB_ACCESS_TOKEN}
 
-COPY ./docker/php/root /
+COPY ./docker/php/root/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh && mkdir -p /var/www && mkdir -p /run/php
 
 WORKDIR /var/www/src
