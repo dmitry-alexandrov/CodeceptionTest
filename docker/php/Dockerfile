@@ -51,3 +51,5 @@ COPY ./docker/php/root/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh && mkdir -p /var/www && mkdir -p /run/php
 
 WORKDIR /var/www/src
+
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
