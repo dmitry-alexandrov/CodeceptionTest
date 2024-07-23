@@ -56,44 +56,4 @@ class CreateProjectContestCest
 
         $I->makeScreenshot('projectContest_create_federal');
     }
-
- /*   #[Depends('testCreateFederalProjectContest')]
-    #[Group('admin')]
-
-    // Редактирование голосования по проектам федерального уровня
-    public function testEditFederalProjectContest(AcceptanceTester $I)
-    {
-        $I->amOnPage($this->viewRoute . '?id=' . $GLOBALS["projectContestId"]);
-        $editProjectContestButton = ".block-action-buttons > a[href='/og/project-contest/update?id=".$GLOBALS["projectContestId"]."']";
-        $I->seeElement($editProjectContestButton);
-        $I->click($editProjectContestButton);
-        $I->wait(4);
-        // редактируем название
-        $I->fillField('input[name="ProjectContest[name]"]', 'федеральное голосование по проектам. Отредактированный ');
-        // редактируем описание
-        $I->fillTextArea('[id="projectcontest-description"]', 'описание голосования по проектам. Отредактированный');
-
-        $I->click('button[type="submit"]');
-        $I->wait(5);
-        $GLOBALS["projectContestId"] = (int) explode('=', parse_url($I->getCurrentUrl())['query'])[1];
-        //$this->id = (int) explode('=', parse_url($I->getCurrentUrl())['query'])[1];
-
-        $I->makeScreenshot('projectContest_edit_federal');
-    }
-
-    #[Depends('testCreateFederalProjectContest')]
-    #[Group('admin')]
-
-   //  Удаление голосования по проектам федерального уровня
-    public function testDeleteFederalProjectContest(AcceptanceTester $I)
-    {
-        $I->amOnPage($this->viewRoute . '?id=' . $GLOBALS["projectContestId"]);
-        $deleteProjectContestButton = '//a[contains(@href, "project-contest/delete")]';
-        $I->seeElement($deleteProjectContestButton);
-        $I->click($deleteProjectContestButton);
-        $I->wait(4);
-        $I->acceptPopup();
-        $I->makeScreenshot('projectContest_delete_federal');
-    }
-*/
 }
