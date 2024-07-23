@@ -65,4 +65,27 @@ class AcceptanceTester extends \Codeception\Actor
     {
         return $this->executeJS("return location.href");
     }
+
+    public function fillDatetimePicker($field, $index, bool $newDay = false)
+    {
+        $this->scrollTo($field);
+        $this->click($field);
+
+        $dayToSelect = $newDay ? 'day new' : 'day';
+        $this->seeElement("(//div[contains(@class, 'datetimepicker') and contains(@class, 'dropdown-menu')])[$index]");
+        $this->click("(//div[contains(@class, 'datetimepicker') and contains(@class, 'dropdown-menu')])[$index]/div[@class='datetimepicker-days']//td[@class='$dayToSelect']");
+        $this->click("(//div[contains(@class, 'datetimepicker') and contains(@class, 'dropdown-menu')])[$index]/div[@class='datetimepicker-hours']//span[@class='hour']");
+        $this->click("(//div[contains(@class, 'datetimepicker') and contains(@class, 'dropdown-menu')])[$index]/div[@class='datetimepicker-minutes']//span[@class='minute']");
+
+    }
+
+    public function fillDatePicker($field, bool $newDay = false)
+    {
+        $this->scrollTo($field);
+        $this->click($field);
+
+        $dayToSelect = $newDay ? 'day new' : 'day';
+        $this->seeElement("(//div[contains(@class, 'datepicker') and contains(@class, 'dropdown-menu')])");
+        $this->click("(//div[contains(@class, 'datepicker') and contains(@class, 'dropdown-menu')])/div[@class='datepicker-days']//td[@class='day']");
+    }
 }

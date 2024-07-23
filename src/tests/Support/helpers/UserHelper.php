@@ -39,6 +39,8 @@ class UserHelper
     public static function signIn(AcceptanceTester $I, string $userType)
     {
         $I->amOnPage('/login');
+        $I->setCookie('s_pos_og_login_show', '9c3235b34e26343473be7e87c30146ac');
+        $I->amOnPage('/login');
         if (!$I->tryToSeeElement('#login-form')) {
             $I->tryToResetCookie('_csrf-backend');
             $I->tryToResetCookie('_identity-backend');
